@@ -1,0 +1,111 @@
+//
+$themeColor = #fc3c4e
+$conainterWidth = 1200px
+$themeBgColor = #f4f4f4
+// topBar
+$topBarBgColor = #e0e0e0
+$topBarFontSize = 12px
+$topBarFontColor = #868686
+$topBarHeight = 32px
+
+// searchBar
+$searchBarBgColor = #f4f4f4
+$searchBarHeight = 102px
+
+// Logo
+$topBarLogoHeight = $topBarHeight + $searchBarHeight
+
+// shop 
+$shopBgColor = #4fa2a9
+
+// mixins
+tab-title(url = '')
+    height: 40px;
+    line-height: 40px;
+
+    h3 {
+        float: left;
+        height: 100%;
+        background: $themeColor;
+        padding-left 20px
+        width: 162px;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 40px;
+        position: relative;
+        font-weight: normal;
+        vertical-align: middle;
+
+        if url != '' {
+            .icon-live {
+                display: inline-block;
+                vertical-align: text-top;
+                width: 28px;
+                height: 28px;
+                background: url(url) no-repeat center;
+                background-size: 100%;
+                margin-right 10px;
+            }
+        }
+        
+
+        &::after {
+            vertical-align: middle;
+            content: ' ';
+            position: absolute;
+            left: 154px;
+            bottom: 0;
+            border: 20px solid transparent;
+            border-bottom-color: $themeColor;
+            border-left-color: $themeColor;
+            transform: scaleX(0.6);
+        }
+
+    }
+
+    .look-more {
+        float: right;
+        font-size: 18px;
+        color #65adb2
+        span  {
+            font-size 20px
+        }
+    }
+
+text-wrap()
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+
+
+play-mask()
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 19;
+    background: rgba(0, 0, 0, 0.68);
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 14px
+
+    .close-box {
+        text-align: right;
+    }
+
+    .icon-close {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background: url('../../assets/img/095.png') no-repeat center;
+        background-size: 100%;
+        cursor: pointer;
+    }
+
+    img {
+        margin: 30px 0 20px;
+        width: 136px;
+        height: 136px;
+    }
